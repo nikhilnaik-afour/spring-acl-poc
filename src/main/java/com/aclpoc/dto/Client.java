@@ -1,41 +1,26 @@
-package com.aclpoc.client.model;
+package com.aclpoc.dto;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Table;
+public class Client {
 
-@Entity
-@Table(name = "clients")
-public class ClientJpaEntity {
-
-	@jakarta.persistence.Id
-	@GeneratedValue
-	long id;
-
-	@Column(name = "name")
+	private long id;
 	private String name;
-
-	@Column(name = "location")
 	private String location;
-
-	@Column(name = "initializationDate")
 	private LocalDate initializationDate;
 
-	public ClientJpaEntity() {
+	public Client() {
 		super();
 	}
 
-	public ClientJpaEntity(String name, String location, LocalDate initializationDate) {
+	public Client(String name, String location, LocalDate initializationDate) {
 		super();
 		this.name = name;
 		this.location = location;
 		this.initializationDate = initializationDate;
 	}
 
-	public ClientJpaEntity(long id, String name, String location, LocalDate initializationDate) {
+	public Client(long id, String name, String location, LocalDate initializationDate) {
 		super();
 		this.id = id;
 		this.name = name;
